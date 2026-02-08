@@ -20,9 +20,16 @@ void main(){
     System.out.println("Alive: " + isAlive);
 
     System.out.println("\nInventory (" + inventory.length + " items):");
-    System.out.println("- " + inventory[0]);
-    System.out.println("- " + inventory[1]);
-    System.out.println("- " + inventory[2]);
+    for(String item : inventory) {
+        System.out.println("- " + item);
+    }
+
+//    for(int i = 0; i < inventory.length; i++){
+//        System.out.println("- " + inventory[i]);
+//    }
+//    System.out.println("- " + inventory[0]);
+//    System.out.println("- " + inventory[1]);
+//    System.out.println("- " + inventory[2]);
 
     System.out.println("\n=== STATUS ===");
 
