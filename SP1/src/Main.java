@@ -25,13 +25,6 @@ void main(){
         System.out.println("- " + item);
     }
 
-//    for(int i = 0; i < inventory.length; i++){
-//        System.out.println("- " + inventory[i]);
-//    }
-//    System.out.println("- " + inventory[0]);
-//    System.out.println("- " + inventory[1]);
-//    System.out.println("- " + inventory[2]);
-
     System.out.println("\n=== STATUS ===");
 
     if (health <= 0) {
@@ -45,8 +38,8 @@ void main(){
         case 'W':
             System.out.println("You are big and strong warrior");
             break;
-        case 'M':
-            System.out.println("You are bad mage");
+        case 'F':
+            System.out.println("You are too fast warrior");
             break;
         case 'R':
             System.out.println("You are sneaky Rogue");
@@ -75,8 +68,6 @@ void main(){
         isAlive = true;
         System.out.println(name + " is still alive.");
     }
-
-
 
 
 }
