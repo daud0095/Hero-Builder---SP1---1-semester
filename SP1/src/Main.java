@@ -1,5 +1,5 @@
 String name = "King";
-int health = 20;
+int health = 85;
 int maxHealth = 100;
 int level = 5;
 int experiencePoints = 2300;
@@ -7,6 +7,7 @@ double gold = 156.50;
 boolean isAlive = true;
 char classType = 'W';
 String[] inventory = {"Sword", "Shield", "Potion"};
+int incomingDamage = 30;
 
 void main(){
 
@@ -58,5 +59,24 @@ void main(){
     if (experiencePoints >= levelUpThreshold) {
         System.out.println("\nReady to level op");
     }
+
+    System.out.println("\n=== COMBAT ===");
+
+    if(incomingDamage >= health) {
+        System.out.println(name + " takes " + incomingDamage + " damage!");
+        System.out.println("Health: " + health + " -> 0");
+        health = 0;
+        isAlive = false;
+        System.out.println(name + " is dead.");
+    } else {
+        System.out.println(name + " takes " + incomingDamage + " damage!");
+        System.out.println("Health: " + health + " -> " + (health - incomingDamage));
+        health -= incomingDamage;
+        isAlive = true;
+        System.out.println(name + " is still alive.");
+    }
+
+
+
 
 }
