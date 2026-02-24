@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 
 class Character {
@@ -24,10 +26,14 @@ class Character {
 
     public void printCharacterSheet(){
         System.out.println("\n=== CHARACTER SHEET ===");
-        System.out.println("Characters name: " + name + " (" + classType + ")");
-        System.out.println("Characters level: " + level + " Health: " + health + "/" + maxHealth);
+        System.out.println("Characters name: " + name);
+        System.out.println("Class: " + classType + " Warrior");
+        System.out.println("Characters health: " +  health + "/" + maxHealth);
+        System.out.println("Level: " + level);
         System.out.println("XP: " + xp);
         System.out.println("Gold: " + gold);
+        System.out.println("health: " + String.format("%.1f", getHealthPercentage()) + "%");
+        System.out.println();
     }
 
     public void takeDamage(int amount){
@@ -43,11 +49,11 @@ class Character {
 
     public void heal(int amount){
         int oldHealth = health;
-        health += health;
+        health += amount;
         if(health > maxHealth) {
             health = maxHealth;
-            System.out.println(name + " heals " + amount + " HP! Health: " + oldHealth + "/" + health);
         }
+        System.out.println(name + " heals " + amount + " HP! Health: " + oldHealth + "/" + health);
     }
 
     public void addGold(double amount){
@@ -55,7 +61,7 @@ class Character {
     }
 
     public boolean removeGold(double amount){
-        if(gold >= amount){
+        if(gold >= 1){
             gold -= amount;
             return true;
         } else {
@@ -106,6 +112,7 @@ class Character {
                 System.out.println(" -" + invent);
             }
         }
+        System.out.println();
     }
 
 }
