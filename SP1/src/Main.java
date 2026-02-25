@@ -60,7 +60,7 @@ public class Main{
            two.attack(one);
 
            if(!one.isAlive()){
-               System.out.println(one.getName() + " er død.");
+               System.out.println(one.getName() + " is dead.");
                break;
            }
      }
