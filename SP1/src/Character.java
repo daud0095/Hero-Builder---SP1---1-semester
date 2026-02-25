@@ -80,7 +80,6 @@ class Character {
     public void levelUp(){
         level++;
         xp = 0;
-//        maxHealth += 20;
         health = maxHealth;
         System.out.println(name + " leveled up! Current level is: " + level + " with max health " + maxHealth);
     }
