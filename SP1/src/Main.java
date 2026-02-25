@@ -65,6 +65,11 @@ public class Main{
            }
      }
      System.out.println("Battle is over.");
-     System.out.println("Winner is: " + ((one.isAlive()) ? one.getName() : two.getName()));
+       if(one.isAlive()){
+           System.out.println("Winner is: " + one.getName());
+       } else{
+           System.out.println("Winner is: " + two.getName());
+       }
+//     System.out.println("Winner is: " + ((one.isAlive()) ? one.getName() : two.getName()));
     }
 }
