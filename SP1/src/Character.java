@@ -61,7 +61,7 @@ class Character {
     }
 
     public boolean removeGold(double amount){
-        if(gold >= 1){
+        if(gold >= amount){
             gold -= amount;
             return true;
         } else {
@@ -80,7 +80,7 @@ class Character {
     public void levelUp(){
         level++;
         xp = 0;
-        maxHealth += 20;
+//        maxHealth += 20;
         health = maxHealth;
         System.out.println(name + " leveled up! Current level is: " + level + " with max health " + maxHealth);
     }
@@ -99,7 +99,7 @@ class Character {
 
     void attack(Character enemy){
         int damage = (int)(Math.random() * 20) + 5; // Damage er mellem 5 og 24;
-        System.out.println(name + " \nattacks " + enemy.name + " for " + damage + " damage");
+        System.out.println(name + " attacks " + enemy.name + " for " + damage + " damage");
         enemy.takeDamage(damage);
     }
 
@@ -113,6 +113,10 @@ class Character {
             }
         }
         System.out.println();
+    }
+
+    public String getName(){
+        return name;
     }
 
 }
